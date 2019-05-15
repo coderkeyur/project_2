@@ -21,8 +21,8 @@ module.exports = function(app) {
     });
 });
 
-app.get("/dashboard", function (req, res) {
-  res.render("dashboard");
+app.get("/profile", function (req, res) {
+  res.render("profile");
 });
 
   // Get all chirps
