@@ -27,6 +27,21 @@ module.exports = function(app, passport) {
     failureFlash: true // Allow flash messages
   }));
 
+  function checkAuthentication(req,res,next){
+    if(req.isAuthenticated()){
+        //req.isAuthenticated() will return true if user is logged in
+        next();
+    } else{
+        res.redirect("/login");
+    }
+}
+
+  app.get('/profile',checkAuthentication,function(req,res){
+    //do something only if user is authenticated
+});
+
+
+
   app.get('/logout', function(req, res, next) {
 
     req.logout();
