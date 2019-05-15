@@ -1,17 +1,20 @@
 var path = require("path");
 var db = require("../models/chirp");
+var Chirp = require("../models/chirp.js");
+var auth = require('../utils/auth');
 
 module.exports = function (app) {
 
   // index route loads view.html
   app.get("/", function (req, res) {
-    db.Chirp.findAll({}).then(function (sequelize_chirp) {
+    Chirp.findAll({}).then(function(results) {
+      // results are available to us inside the .then
       res.render("index", {
-        Title: "Home",
-        Chirps: sequelize_chirp
+        title: "Welcome!", 
+        Chirps: results
       });
     });
-  });
+});
 
   app.get("/login", function (req, res) {
     res.render("login")

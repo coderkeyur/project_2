@@ -12,8 +12,10 @@ var session      = require('express-session');
 var app = express();
 
 // Sets up the Express app to handle data parsing
+
 // app.use(express.urlencoded({ extended: false }));
 // app.use(express.json());
+
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));

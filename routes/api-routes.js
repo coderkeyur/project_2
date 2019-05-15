@@ -11,15 +11,15 @@ var Chirp = require("../models/chirp.js");
 // =============================================================
 module.exports = function(app) {
 
-  app.get("/", function (req, res) {
-    Chirp.findAll({}).then(function(results) {
-      // results are available to us inside the .then
-      res.render("index", {
-        title: "Welcome!", 
-        Chirps: results
-      });
-    });
-});
+//   app.get("/", function (req, res) {
+//     Chirp.findAll({}).then(function(results) {
+//       // results are available to us inside the .then
+//       res.render("index", {
+//         title: "Welcome!", 
+//         Chirps: results
+//       });
+//     });
+// });
 
 app.get("/profile", function (req, res) {
   res.render("profile");
